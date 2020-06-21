@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Atlantis Lite - Bootstrap 4 Admin Dashboard</title>
     <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-    <link rel="icon" href="{{asset('assets/img/icon.ico')}}" type="image/x-icon"/>
+    <link rel="icon" href="{{asset('assets/img/favicon.png')}}" type="image/x-icon"/>
 
     <!-- Fonts and icons -->
     <script src="{{asset('assets/js/plugin/webfont/webfont.min.js')}}"></script>
@@ -30,7 +30,7 @@
             <div class="logo-header" data-background-color="blue">
 
                 <a href="index.html" class="logo">
-                    <img src="{{asset('assets/img/logo.svg')}}" alt="navbar brand" class="navbar-brand">
+                    <img src="{{asset('assets/img/logo.png')}}" alt="navbar brand" class="navbar-brand">
                 </a>
                 <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon">
@@ -290,7 +290,7 @@
     </div>
 
     <!-- Sidebar -->
-    <div class="sidebar">           
+    <div class="sidebar" style="background-color: #1F283E;">           
         <div class="sidebar-wrapper scrollbar scrollbar-inner">
             <div class="sidebar-content">
                 <div class="user">
@@ -346,10 +346,26 @@
                             <i class="fas fa-building"></i>
                             <p>Education Levels</p>
                         </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('education_classes')}}">
+                            <i class="fas fa-building"></i>
+                            <p>Classes</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('subjects')}}">
+                            <i class="fas fa-building"></i>
+                            <p>Subjects</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a href="{{route('education_resources')}}">
                             <i class="fas fa-building"></i>
                             <p>Education Resources</p>
                         </a>
+                    </li>
+                    <li class="nav-item">
                         <a href="{{route('learners')}}">
                             <i class="fas fa-building"></i>
                             <p>Learners</p>

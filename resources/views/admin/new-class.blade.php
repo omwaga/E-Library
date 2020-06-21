@@ -5,7 +5,7 @@
     <div class="content">
         <div class="page-inner">
             <div class="page-header">
-                <h4 class="page-title">New Level</h4>
+                <h4 class="page-title">New Class</h4>
                 <ul class="breadcrumbs">
                     <li class="nav-home">
                         <a href="{{route('admin')}}">
@@ -16,7 +16,7 @@
                         <i class="flaticon-right-arrow"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('education_levels')}}">Education Levels</a>
+                        <a href="{{route('education_classes')}}">All Classes</a>
                     </li>
                     <li class="separator">
                         <i class="flaticon-right-arrow"></i>
@@ -27,23 +27,34 @@
                 <div class="col-md-8">
                     <div class="card">
                         <div class="card-header" align="center">
-                            <h4>LEVEL NAME</h4>
-                            <span>The education levels will have the various subjects</span>
+                            <h4>Add a Class</h4>
+                            <span>Class Belong to the education level</span>
                             @include('errors')
                             @include('success')
                         </div>
-                        <form method="POST" action="{{route('education_levels.new')}}">
+                        <form method="POST" action="{{route('education_classes.store')}}">
                             @csrf
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-group">
-                                        <label>What do you need to get done?</label>
-                                        <input type="text" name="name" class="form-control" placeholder="Level Name" required="" value="{{old('name')}}">
+                                        <label>What is the class name?</label>
+                                        <input type="text" name="name" class="form-control" placeholder="Class Name" required="" value="{{old('name')}}">
                                     </div>
-                                </div>  
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label>Education Level</label>                                        
+                                        <select name="education_level_id" class="form-control">
+                                            <option value="">Select Education Level</option>
+                                            @foreach($levels as $level)
+                                            <option value="{{$level->id}}">{{$level->name}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
                                 <div class="col-lg-12">
-                                    <button type="submit" class="btn btn-success m-b-10 m-l-5 pull-right">Submit</button>
-                                </div><br>
+                                    <button type="submit" class="btn btn-success m-b-10 m-l-5">Submit</button>
+                                </div>
                             </div>
                         </form>
                     </div>
@@ -56,7 +67,7 @@
                             </span>
                         </li>
                         <div class="card-footer">
-                            <a href="{{route('education_levels')}}" class="btn btn-primary btn-block"><b>All Levels</b></a>
+                            <a href="{{route('education_classes')}}" class="btn btn-primary btn-block"><b>All Classes</b></a>
                         </div>
                     </ol>
                 </div>

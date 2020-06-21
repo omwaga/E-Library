@@ -15,7 +15,7 @@ class EducationLevels extends Migration
     {
         Schema::create('education_levels', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
+            $table->string('name')->unique();
             $table->timestamps();
         });
     }
