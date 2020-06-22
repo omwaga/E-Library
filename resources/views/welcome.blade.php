@@ -119,9 +119,10 @@
                                                                     <li><a href="index.html">Home</a></li>
                                                                     <li class="icon-active"><a href="#">Our Services</a>
                                                                         <ul class="sub-menu">
-                                                                            <li><a href="#">Primary Education</a></li>
-                                                                            <li><a href="#">Secondary education</a></li>
-                                                                            <li><a href="#">Colleges and Universities</a></li>
+                                                                            @forelse($levels as $level)
+                                                                            <li><a href="#">{{$level->name}}</a></li>
+                                                                            @empty
+                                                                            @endforelse
                                                                         </ul>
                                                                     </li>
                                                                     <li><a href="#">Learning Model</a></li>

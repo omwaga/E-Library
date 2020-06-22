@@ -29,33 +29,37 @@
                         <div class="card-header" align="center">
                             <h4>New Resource</h4>
                             <span>Resource for a particular class</span>
+                            @include('errors')
+                            @include('success')
                         </div>
-                        <form method="POST" action="/jobs">
+                        <form method="POST" action="{{route('education_resources.store')}}" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-group">
                                         <label>What is the name of the resource?</label>
-                                        <input type="text" name="title" class="form-control" placeholder="Project Title" required="" value="{{old('title')}}">
+                                        <input type="text" name="name" class="form-control" placeholder="Resource Name" required="" value="{{old('name')}}">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group">
                                         <label>Class:</label>                                        
-                                        <select name="category_id" class="form-control">
-                                            <option>All Categories</option>
-                                            <option>Others</option>
+                                        <select name="education_class_id" class="form-control">
+                                            <option value="">Select Class</option>
+                                            @foreach($classes as $class)
+                                            <option value="{{$class->id}}">{{$class->name}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group">
                                         <label>Subject:</label>
-                                        <select name="sub_category_id" class="form-control">
-                                            <option>Not Specified</option>
-                                            <option>Beginner</option>
-                                            <option>Intermediate</option>
-                                            <option>Expert</option>
+                                        <select name="subject_id" class="form-control">
+                                            <option value="">Select Subject</option>
+                                            @foreach($subjects as $subject)
+                                            <option value="{{$subject->id}}">{{$subject->name}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>                                
@@ -68,7 +72,7 @@
                                 <div class="col-lg-12">
                                     <div class="form-group">
                                         <label>Upload samples and other useful materials</label>
-                                        <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                                        <input type="file" name="resource_file" class="form-control-file" id="exampleFormControlFile1" required="">
                                     </div>
                                 </div>
                                 <div class="col-lg-12">

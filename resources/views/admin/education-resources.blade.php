@@ -29,31 +29,33 @@
                         <h4>GET YOUR PROJECT DONE</h4>
                         <span>Post a project for FREE - start receiving proposals in minutes</span>
                     </div>
+                    @forelse($resources as $resource)
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex justify-content-between">
                                 <div>
-                                    <h5><b>Todays Income</b></h5>
+                                    <h5><b>{{$resource->name}}</b></h5>
                                     <p class="text-muted">All Customs Value</p>
                                 </div>
                                 <h3 class="text-info fw-bold">$170</h3>
                             </div>
-                            <div class="progress progress-sm">
-                                <div class="progress-bar bg-info w-75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
+                                <iframe style="width: 600px" src="{{asset('storage/'.$resource->resource_file)}}"></iframe>
                             <div class="d-flex justify-content-between mt-2">
                                 <p class="text-muted mb-0">Change</p>
                                 <p class="text-muted mb-0">75%</p>
                             </div>
                         </div>
                     </div>
+                    @empty
+                    <p>Nothing to show!</p>
+                    @endforelse
                 </div>
                 <div class="col-md-4">
                     <div class="card card-pricing">
                         <div class="card-header">
                             <h4 class="card-title">Total Resources</h4>
                             <div class="card-price">
-                                <span class="price">20000000006666665</span>
+                                <span class="price">{{$resources->count()}}</span>
                             </div>
                         </div>
                         <div class="card-body">

@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\EducationalResource;
+use App\EducationClass;
+use App\Subject;
 
 class EducationResourcesController extends Controller
 {
@@ -18,7 +21,9 @@ class EducationResourcesController extends Controller
      */
     public function index()
     {
-        return view('admin.education-resources');
+        $resources = EducationalResource::orderby('created_at', 'DESC')->get();
+
+        return view('admin.education-resources', compact('resources'));
     }
 
     /**
@@ -28,7 +33,10 @@ class EducationResourcesController extends Controller
      */
     public function create()
     {
-        return view('admin.new-resource');
+        $classes = EducationClass::all();
+        $subjects =  Subject::all();
+
+        return view('admin.new-resource', compact('classes', 'subjects'));
     }
 
     /**
@@ -39,7 +47,23 @@ class EducationResourcesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $attributes = $request->validate([
+            'name' => 'required|min:3',
+            'education_class_id' => 'required',
+            'subject_id' => 'required',
+            'description' => 'required',
+            'resource_file' => 'required'
+        ]);
+
+
+        if ($request->hasFile('resource_file')) {
+            $attributes['resource_file'] = $request->resource_file->getClientOriginalName();
+            $request->resource_file->storeAs('public', $attributes['resource_file']);
+        }
+        EducationalResource::create($attributes);
+
+        return redirect()->back()->with('message', 'The Resource has been uploaded successfully');
+
     }
 
     /**
