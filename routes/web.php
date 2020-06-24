@@ -39,8 +39,10 @@ Route::prefix('admin')->group(function()
 	Route::get('learners', 'AdminController@learners')->name('learners');
 });
 
-
+// Public routes
 Route::get('/', 'PagesController@home')->name('home');
+Route::get('/classes/{level}', 'PagesController@classes')->name('classes');
+Route::get('/resources/{class}', 'PagesController@resource')->name('resource');
 
 Auth::routes();
 

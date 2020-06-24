@@ -19,6 +19,7 @@ class EducationalResources extends Migration
             $table->unsignedBigInteger('education_class_id');
             $table->string('name');
             $table->text('description');
+            $table->uuid('uuid')->nullable();
             $table->string('resource_file');
             $table->timestamps();
 

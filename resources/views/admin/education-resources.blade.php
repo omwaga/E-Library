@@ -35,15 +35,11 @@
                             <div class="d-flex justify-content-between">
                                 <div>
                                     <h5><b>{{$resource->name}}</b></h5>
-                                    <p class="text-muted">All Customs Value</p>
+                                    <p class="text-muted mb-0"><label class="b">Class:</label>{{$resource->class->name ?? ''}}</p>
+                                    <p class="text-muted mb-0"><label class="b">Subject:</label>{{$resource->subject->name ?? ''}}</p>
                                 </div>
-                                <h3 class="text-info fw-bold">$170</h3>
                             </div>
-                                <iframe style="width: 600px" src="{{asset('storage/'.$resource->resource_file)}}"></iframe>
-                            <div class="d-flex justify-content-between mt-2">
-                                <p class="text-muted mb-0">Change</p>
-                                <p class="text-muted mb-0">75%</p>
-                            </div>
+                            <iframe style="width: 600px" src="{{asset('storage/'.$resource->resource_file)}}"></iframe>
                         </div>
                     </div>
                     @empty

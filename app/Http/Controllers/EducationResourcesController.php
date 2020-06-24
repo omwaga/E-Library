@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Webpatser\Uuid\Uuid;
 use App\EducationalResource;
 use App\EducationClass;
 use App\Subject;
@@ -56,9 +57,11 @@ class EducationResourcesController extends Controller
         ]);
 
 
+        $attributes['uuid'] = (string)Uuid::generate();
+
         if ($request->hasFile('resource_file')) {
             $attributes['resource_file'] = $request->resource_file->getClientOriginalName();
-            $request->resource_file->storeAs('public', $attributes['resource_file']);
+            $request->resource_file->storeAs('public', $attributes['uuid'].$attributes['resource_file'] );
         }
         EducationalResource::create($attributes);
 

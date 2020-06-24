@@ -42,6 +42,7 @@ class SubjectsController extends Controller
     {
         $attributes = request()->validate([
             'education_level_id' => 'required',
+            'education_class_id' => 'required',
             'name' => 'required|min:3'
         ]);
 

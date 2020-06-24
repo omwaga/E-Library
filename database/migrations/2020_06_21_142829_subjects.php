@@ -16,12 +16,18 @@ class Subjects extends Migration
         Schema::create('subjects', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('education_level_id');
+            $table->unsignedBigInteger('education_class_id');
             $table->string('name');
             $table->timestamps();
 
             $table->foreign('education_level_id')
             ->references('id')
             ->on('education_levels')
+            ->onDelete('cascade');
+
+            $table->foreign('education_class_id')
+            ->references('id')
+            ->on('education_classes')
             ->onDelete('cascade');
         });
     }

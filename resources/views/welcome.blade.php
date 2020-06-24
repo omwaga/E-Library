@@ -119,10 +119,11 @@
                                                                     <li><a href="index.html">Home</a></li>
                                                                     <li class="icon-active"><a href="#">Our Services</a>
                                                                         <ul class="sub-menu">
-                                                                            @forelse($levels as $level)
-                                                                            <li><a href="#">{{$level->name}}</a></li>
-                                                                            @empty
-                                                                            @endforelse
+                                                                          @forelse($levels as $level)
+                                                                            @php $url = Str::slug($level->name, '-'); @endphp
+                                                                          <li><a href="{{route('classes', $url)}}">{{$level->name}}</a></li>
+                                                                          @empty
+                                                                          @endforelse
                                                                         </ul>
                                                                     </li>
                                                                     <li><a href="#">Learning Model</a></li>
@@ -365,51 +366,25 @@
                         </div>
                     </div>
                     <div class="row">
+                        @forelse($levels as $level)
                         <div class="col-lg-4 col-md-4 col-12">
                             <!-- Single Service -->
                             <div class="single-service">
                                 <div class="service-head">
-                                    <img src="https://via.placeholder.com/555x410" alt="#">
+                                    <img src="{{asset('img/slider/slider1.jpg')}}" alt="#">
                                     <div class="icon-bg"><i class="fa fa-handshake-o"></i></div>
                                 </div>
                                 <div class="service-content">
-                                    <h4><a href="service-business.html">Business Strategy</a></h4>
+                                    <h4><a href="#">{{$level->name}}</a></h4>
                                     <p>Cras venenatis, purus sit amet tempus mattis, justo nisi facilisis metus, in tempus ipsum ipsum eu ipsum. Class aptent taciti</p>
                                     <a class="btn" href="service-business.html"><i class="fa fa-arrow-circle-o-right"></i>View Service</a>
                                 </div>
                             </div>
                             <!--/ End Single Service -->
                         </div>
-                        <div class="col-lg-4 col-md-4 col-12">
-                            <!-- Single Service -->
-                            <div class="single-service">
-                                <div class="service-head">
-                                    <img src="https://via.placeholder.com/555x410" alt="#">
-                                    <div class="icon-bg"><i class="fa fa-html5"></i></div>
-                                </div>
-                                <div class="service-content">
-                                    <h4><a href="service-develop.html">Web Development</a></h4>
-                                    <p>Cras venenatis, purus sit amet tempus mattis, justo nisi facilisis metus, in tempus ipsum ipsum eu ipsum. Class aptent taciti</p>
-                                    <a class="btn" href="service-develop.html"><i class="fa fa-arrow-circle-o-right"></i>View Service</a>
-                                </div>
-                            </div>
-                            <!--/ End Single Service -->
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-12">
-                            <!-- Single Service -->
-                            <div class="single-service">
-                                <div class="service-head">
-                                    <img src="https://via.placeholder.com/555x410" alt="#">
-                                    <div class="icon-bg"><i class="fa fa-cube"></i></div>
-                                </div>
-                                <div class="service-content">
-                                    <h4><a href="service-market.html">Market Research</a></h4>
-                                    <p>Cras venenatis, purus sit amet tempus mattis, justo nisi facilisis metus, in tempus ipsum ipsum eu ipsum. Class aptent taciti</p>
-                                    <a class="btn" href="service-market.html"><i class="fa fa-arrow-circle-o-right"></i>View Service</a>
-                                </div>
-                            </div>
-                            <!--/ End Single Service -->
-                        </div>
+                        @empty
+                        <p>Nothing yet</p>
+                        @endforelse
                     </div>
                 </div>
             </section>
