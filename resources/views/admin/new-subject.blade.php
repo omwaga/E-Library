@@ -43,11 +43,11 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        <label>Education Level</label>                                        
-                                        <select name="education_level_id" class="form-control">
-                                            <option value="">Select Education Level</option>
-                                            @foreach($levels as $level)
-                                            <option value="{{$level->id}}">{{$level->name}}</option>
+                                        <label>Class:</label>                                      
+                                        <select name="education_class_id" class="form-control">
+                                            <option value="">Select Class</option>
+                                            @foreach($classes as $class)
+                                            <option value="{{$class->id}}">{{$class->name}}</option>
                                             @endforeach
                                         </select>
                                     </div>

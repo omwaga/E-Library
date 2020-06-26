@@ -10,10 +10,10 @@ use App\Subject;
 
 class EducationResourcesController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth:admin');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth:admin');
+    // }
     
     /**
      * Display a listing of the resource.
@@ -112,5 +112,13 @@ class EducationResourcesController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    // Download a resource
+    public function download($uuid)
+    {
+        $resource = EducationalResource::where('uuid', $uuid)->firstOrFail();
+        $pathToFile = storage_path('app/public/' . $resource->uuid.$resource->resource_file);
+        return response()->download($pathToFile);
     }
 }

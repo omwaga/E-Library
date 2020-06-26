@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Subject;
 use App\EducationLevel;
+use App\EducationClass;
 
 class SubjectsController extends Controller
 {
@@ -27,9 +28,9 @@ class SubjectsController extends Controller
      */
     public function create()
     {
-        $levels = EducationLevel::all();
+        $classes = EducationClass::all();
 
-        return view('admin.new-subject', compact('levels'));
+        return view('admin.new-subject', compact('classes'));
     }
 
     /**
@@ -41,7 +42,6 @@ class SubjectsController extends Controller
     public function store(Request $request)
     {
         $attributes = request()->validate([
-            'education_level_id' => 'required',
             'education_class_id' => 'required',
             'name' => 'required|min:3'
         ]);

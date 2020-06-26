@@ -12,4 +12,9 @@ class Subject extends Model
     {
     	return $this->belongsTo(EducationLevel::class, 'education_level_id', 'id');
     }
+
+    public function subjects()
+    {
+    	return $this->belongsTo(EducationClass::class);
+    }
 }

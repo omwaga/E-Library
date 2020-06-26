@@ -100,7 +100,7 @@
                                             <div class="logo">
                                                 <!-- Image Logo -->
                                                 <div class="img-logo">
-                                                    <a href="index.html">
+                                                    <a href="/">
                                                         <img src="{{asset('img/logo.png')}}" alt="#">
                                                     </a>
                                                 </div>
@@ -116,7 +116,7 @@
                                                             <div class="menu-home-menu-container">
                                                                 <!-- Naviagiton -->
                                                                 <ul id="nav" class="nav main-menu menu navbar-nav">
-                                                                    <li><a href="index.html">Home</a></li>
+                                                                    <li><a href="/">Home</a></li>
                                                                     <li class="icon-active"><a href="#">Our Services</a>
                                                                         <ul class="sub-menu">
                                                                           @forelse($levels as $level)
@@ -129,7 +129,7 @@
                                                                   <li><a href="#">Learning Model</a></li>
                                                                   <li><a href="#">Blog</a></li>
                                                                   <li><a href="#">About Us</a></li>
-                                                                  <li><a href="contact.html">Contact Us</a></li>
+                                                                  <li><a href="#">Contact Us</a></li>
                                                               </ul>
                                                               <!--/ End Naviagiton -->
                                                           </div>
@@ -209,8 +209,8 @@
                             <div class="single-widget footer-about widget"> 
                                 <div class="logo">
                                     <div class="img-logo">
-                                        <a class="logo" href="index.html">
-                                            <img class="img-responsive" src="img/logo2.png" alt="logo">
+                                        <a class="logo" href="/">
+                                            <img class="img-responsive" src="{{asset('img/logo.png')}}" alt="logo">
                                         </a>
                                     </div>
                                 </div>
@@ -254,7 +254,7 @@
                                     <div class="post-thumb"><a href="#"><img src="https://via.placeholder.com/70x70" alt="#"></a></div>
                                     <div class="content">
                                         <p class="post-meta"><time class="post-date"><i class="fa fa-clock-o"></i>April 15, 2020</time></p>
-                                        <h4 class="title"><a href="blog-sngle.html">We Provide you Best &amp; Creative Consulting Service</a></h4>
+                                        <h4 class="title"><a href="#">We Provide you Best &amp; Creative Consulting Service</a></h4>
                                     </div>
                                 </div>
                                 <!--/ End Single News -->
@@ -263,7 +263,7 @@
                                     <div class="post-thumb"><a href="#"><img src="https://via.placeholder.com/70x70" alt="#"></a></div>
                                     <div class="content">
                                         <p class="post-meta"><time class="post-date"><i class="fa fa-clock-o"></i>April 10, 2020</time></p>
-                                        <h4 class="title"><a href="blog-sngle.html">We Provide you Best &amp; Creative Consulting Service</a></h4>
+                                        <h4 class="title"><a href="#">We Provide you Best &amp; Creative Consulting Service</a></h4>
                                     </div>
                                 </div>
                                 <!--/ End Single News -->

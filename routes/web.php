@@ -15,6 +15,7 @@ Route::prefix('admin')->group(function()
         'show' => 'education_levels.show',
         // etc...
     ]]);
+    //Educational resources routes here
 	Route::resource('education_resources', 'EducationResourcesController', [
     'names' => [
         'index' => 'education_resources',
@@ -22,6 +23,8 @@ Route::prefix('admin')->group(function()
         'store' => 'education_resources.store',
         // etc...
     ]]);
+    Route::get('education_resources/{uuid}/download', 'EducationResourcesController@download')->name('resource.download');
+
     Route::resource('subjects', 'SubjectsController', [
     'names' => [
         'index' => 'subjects',

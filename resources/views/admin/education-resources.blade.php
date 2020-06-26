@@ -39,7 +39,7 @@
                                     <p class="text-muted mb-0"><label class="b">Subject:</label>{{$resource->subject->name ?? ''}}</p>
                                 </div>
                             </div>
-                            <iframe style="width: 600px" src="{{asset('storage/'.$resource->resource_file)}}"></iframe>
+                            <iframe style="width: 600px" src="{{asset('storage/'.$resource->uuid.$resource->resource_file)}}"></iframe>
                         </div>
                     </div>
                     @empty

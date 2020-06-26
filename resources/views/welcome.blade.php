@@ -230,10 +230,10 @@
                                 <div class="col-lg-7 col-md-8 col-12">
                                     <div class="welcome-text"> 
                                         <div class="hero-text"> 
-                                            <h4>Your time is so important for us</h4>
+                                            <h4>Mentorship Programme</h4>
                                             <h1>Build Your WorldClass Brand with Bizwheel</h1>
                                             <div class="p-text">
-                                                <p>Nunc tincidunt venenatis elit. Etiam venenatis quam vel maximus bibendum Pellentesque elementum dapibus diam tristique</p>
+                                                <p>Students are encouraged to participate in the Dawati mentorship program to interact with professionals who offer their guidance through the platform.</p>
                                             </div>
                                             <div class="button">
                                                 <a href="blog.html" class="bizwheel-btn theme-1 effect">Read our blog</a>
@@ -253,9 +253,9 @@
                                     <div class="welcome-text"> 
                                         <div class="hero-text"> 
                                             <h4>Our experties are waiting for you</h4>
-                                            <h1>Best Way to Represent your Next Business </h1>
+                                            <h1>Learn At Your Own Pace</h1>
                                             <div class="p-text">
-                                                <p>Nunc tincidunt venenatis elit. Etiam venenatis quam vel maximus bibendum Pellentesque elementum dapibus diam tristique</p>
+                                                <p>Login in whenever you need to and complete tasks, worksheets or modules at your own pace.</p>
                                             </div>
                                             <div class="button">
                                                 <a href="team.html" class="bizwheel-btn theme-2 effect">Our Leaders</a>
@@ -279,10 +279,11 @@
                             <!-- Single Feature -->
                             <div class="single-feature">
                                 <div class="icon-head"><i class="fa fa-podcast"></i></div>
-                                <h4><a href="service-single.html">Creative Design</a></h4>
-                                <p>Aenean aliquet rutrum enimn scelerisque. Nam dictumanpo, antequis laoreet ullamcorper, velitsd odio scelerisque tod</p>
+                                <h4><a href="#">OUR AFFORDABLE
+TUITION PROMISE</a></h4>
+                                <p>Our high-quality programs are created with your budget in mind. Get the top-tier instruction you deserve without the financial worry you’d expect.</p>
                                 <div class="button">
-                                    <a href="service-single.html" class="bizwheel-btn"><i class="fa fa-arrow-circle-o-right"></i>Learn More</a>
+                                    <a href="#" class="bizwheel-btn"><i class="fa fa-arrow-circle-o-right"></i>Learn More</a>
                                 </div>
                             </div>
                             <!--/ End Single Feature -->
@@ -291,10 +292,11 @@
                             <!-- Single Feature -->
                             <div class="single-feature">
                                 <div class="icon-head"><i class="fa fa-podcast"></i></div>
-                                <h4><a href="service-single.html">Quality Service</a></h4>
-                                <p>Aenean aliquet rutrum enimn scelerisque. Nam dictumanpo, antequis laoreet ullamcorper, velitsd odio scelerisque tod</p>
+                                <h4><a href="#">A DIFFERENT WAY
+TO LEARN</a></h4>
+                                <p>To say that you’re busy is a significant understatement. That’s why we’re committed to providing a quality learning experience that fits within your lifestyle. Get your degree online, on your terms.</p>
                                 <div class="button">
-                                    <a href="service-single.html" class="bizwheel-btn"><i class="fa fa-arrow-circle-o-right"></i>Learn More</a>
+                                    <a href="#" class="bizwheel-btn"><i class="fa fa-arrow-circle-o-right"></i>Learn More</a>
                                 </div>
                             </div>
                             <!--/ End Single Feature -->
@@ -334,8 +336,8 @@
                     <div class="row">
                         <div class="col-lg-9 col-12">
                             <div class="call-inner">
-                                <h2>Brand Products &amp; Creativity is our Fashion</h2>
-                                <p>ehicula maximus velit. Morbi non tincidunt purus, a hendrerit nisi. Vivamus elementum</p>
+                                <h2>Your education starts here.</h2>
+                                <p>Take the first step toward furthering your career by finding the program that’s right for you. With respected faculty, a flexible format, and knowledge that is immediately applicable, all of our programs are designed to help you reach the next level.</p>
                             </div>
                         </div>
                         <div class="col-lg-3 col-12">
@@ -355,7 +357,7 @@
                         <div class="col-12">
                             <div class="section-title style2 text-center">
                                 <div class="section-top">
-                                    <h1><span>Creative</span><b>Service We Provide</b></h1><h4>We provide quality service &amp; support..</h4>
+                                    <h1><span>Creative</span><b>Learning Resources</b></h1><h4>We provide quality service &amp; support..</h4>
                                 </div>
                                 <div class="section-bottom">
                                     <div class="text-style-two">
@@ -397,7 +399,7 @@
                         <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-12">
                             <div class="section-title default text-center">
                                 <div class="section-top">
-                                    <h1><span>Project</span><b>Our Works</b></h1>
+                                    <h1><span>Project</span><b>Popular Resources</b></h1>
                                 </div>
                                 <div class="section-bottom">
                                     <div class="text">

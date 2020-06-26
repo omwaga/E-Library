@@ -37,7 +37,7 @@
                         <div class="card-footer">
                             <div class="row user-stats text-center">
                                 <div class="col">
-                                    <div class="number">{{$class->subjects->count()}}</div>
+                                    <div class="number">{{$class->subjects->count() ?? ''}}</div>
                                     <div class="title">Subjects</div>
                                 </div>
                                 <div class="col">

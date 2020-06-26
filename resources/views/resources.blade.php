@@ -52,8 +52,8 @@
 							<div class="service-content">
 								@php $url = Str::slug($resource->name, '-'); @endphp
 								<h4><a href="#">{{$resource->name}}</a></h4>
-								<p>Cras venenatis, purus sit amet tempus mattis, justo nisi facilisis metus, in tempus ipsum ipsum eu ipsum. Class aptent taciti</p>
-								<a class="btn" href="service-business.html"><i class="fa fa-arrow-circle-o-right"></i>View Service</a>
+								<p>{{$resource->description}}</p>
+								<a class="btn" href="{{ route('resource.download', $resource->uuid) }}"><i class="fa fa-arrow-circle-o-right"></i>Download</a>
 							</div>
 						</div>
 						<!--/ End Single Service -->
