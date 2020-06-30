@@ -23,7 +23,7 @@ Route::prefix('admin')->group(function()
         'store' => 'education_resources.store',
         // etc...
     ]]);
-    Route::get('education_resources/{uuid}/download', 'EducationResourcesController@download')->name('resource.download');
+    Route::get('education_resources/{uuid}/download', 'LearnerDashboardController@download')->name('resource.download');
 
     Route::resource('subjects', 'SubjectsController', [
     'names' => [

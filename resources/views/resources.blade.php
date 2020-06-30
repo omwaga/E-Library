@@ -30,7 +30,7 @@
 					<div class="col-12">
 						<div class="section-title  style2 text-center">
 							<div class="section-top">
-								<h1><span>Creative</span><b>Service We Provide</b></h1><h4>We provide quality service &amp; support..</h4>
+								<h1><span>Learning</span><b>{{$education_class->name}} Resources</b></h1><h4>We provide quality service &amp; support..</h4>
 							</div>
 							<div class="section-bottom">
 								<div class="text-style-two">
@@ -53,7 +53,11 @@
 								@php $url = Str::slug($resource->name, '-'); @endphp
 								<h4><a href="#">{{$resource->name}}</a></h4>
 								<p>{{$resource->description}}</p>
+								@auth()
 								<a class="btn" href="{{ route('resource.download', $resource->uuid) }}"><i class="fa fa-arrow-circle-o-right"></i>Download</a>
+								@else
+								<a class="btn" href="{{ route('login') }}"><i class="fa fa-arrow-circle-o-right"></i>Download</a>
+								@endauth
 							</div>
 						</div>
 						<!--/ End Single Service -->

@@ -30,7 +30,7 @@
 					<div class="col-12">
 						<div class="section-title  style2 text-center">
 							<div class="section-top">
-								<h1><span>Creative</span><b>Service We Provide</b></h1><h4>We provide quality service &amp; support..</h4>
+								<h1><span>Creative</span><b>Service We Provide</b></h1><h4>Timely, topical collections focused around learning objectives</h4>
 							</div>
 							<div class="section-bottom">
 								<div class="text-style-two">
