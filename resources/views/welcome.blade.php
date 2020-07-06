@@ -31,17 +31,6 @@
     <link rel="stylesheet" href="{{asset('css/reset.css')}}">
     <link rel="stylesheet" href="{{asset('style.css')}}">
     <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
-
-    <!-- Bizwheel Colors -->
-        <!--<link rel="stylesheet" href="css/skins/skin-1.css">
-            <!--<link rel="stylesheet" href="css/skins/skin-2.css">-->
-            <!--<link rel="stylesheet" href="css/skins/skin-3.css">-->
-            <!--<link rel="stylesheet" href="css/skins/skin-4.css">-->
-
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
         
     </head>
     <body id="bg">
@@ -100,7 +89,7 @@
                                             <div class="logo">
                                                 <!-- Image Logo -->
                                                 <div class="img-logo">
-                                                    <a href="index.html">
+                                                    <a href="/">
                                                         <img src="img/logo.png" alt="#">
                                                     </a>
                                                 </div>
@@ -116,7 +105,7 @@
                                                             <div class="menu-home-menu-container">
                                                                 <!-- Naviagiton -->
                                                                 <ul id="nav" class="nav main-menu menu navbar-nav">
-                                                                    <li><a href="index.html">Home</a></li>
+                                                                    <li><a href="/">Home</a></li>
                                                                     <li class="icon-active"><a href="#">Our Services</a>
                                                                         <ul class="sub-menu">
                                                                           @forelse($levels as $level)
@@ -127,9 +116,9 @@
                                                                       </ul>
                                                                   </li>
                                                                   <li><a href="#">Learning Model</a></li>
-                                                                  <li><a href="#">Blog</a></li>
-                                                                  <li><a href="#">About Us</a></li>
-                                                                  <li><a href="contact.html">Contact Us</a></li>
+                                                                  <li><a href="{{route('blog')}}">Blog</a></li>
+                                                                  <li><a href="{{route('about')}}">About Us</a></li>
+                                                                  <li><a href="{{route('contact')}}">Contact Us</a></li>
                                                               </ul>
                                                               <!--/ End Naviagiton -->
                                                           </div>
@@ -183,12 +172,12 @@
                 <div class="single-content">
                     <h4>Important Links</h4>   
                     <ul class="links">
-                        <li><a href="#">About Us</a></li>
+                        <li><a href="{{route('about')}}">About Us</a></li>
                         <li><a href="#">Our Services</a></li>
                         <li><a href="#">Portfolio</a></li>
                         <li><a href="#">Pricing Plan</a></li>
                         <li><a href="#">Blog & News</a></li>
-                        <li><a href="#">Contact us</a></li>
+                        <li><a href="{{route('contact')}}">Contact us</a></li>
                     </ul>
                 </div>  
             </div>
@@ -213,7 +202,7 @@
                                             Edutap is an online platform that helps you learn and get the best grades in your secondary school exams.</p>
                                         </div>
                                         <div class="button">
-                                            <a href="#" class="bizwheel-btn theme-1 effect">Get Started</a>
+                                            <a href="{{route('register')}}" class="bizwheel-btn theme-1 effect">Get Started</a>
                                             <a href="#" class="bizwheel-btn theme-2 effect">View Our Resources</a>
                                         </div>
                                     </div>
@@ -236,7 +225,7 @@
                                             <p>Students are encouraged to participate in the Dawati mentorship program to interact with professionals who offer their guidance through the platform.</p>
                                         </div>
                                         <div class="button">
-                                            <a href="blog.html" class="bizwheel-btn theme-1 effect">Read our blog</a>
+                                            <a href="#" class="bizwheel-btn theme-1 effect">Read our blog</a>
                                         </div>
                                     </div>
                                 </div>
@@ -258,7 +247,7 @@
                                             <p>Login in whenever you need to and complete tasks, worksheets or modules at your own pace.</p>
                                         </div>
                                         <div class="button">
-                                            <a href="team.html" class="bizwheel-btn theme-2 effect">Our Leaders</a>
+                                            <a href="#" class="bizwheel-btn theme-2 effect">Our Leaders</a>
                                         </div>
                                     </div>
                                 </div>
@@ -306,11 +295,11 @@
                         <!-- Single Feature -->
                         <div class="single-feature active">
                             <div class="icon-head"><i class="fa fa-podcast"></i></div>
-                            <h4><a href="service-single.html">Unlimited Downloads</a></h4>
+                            <h4><a href="#">Unlimited Downloads</a></h4>
                             <p>
                             For deeper learning and practice download e-books and exam papers from our resource library</p>
                             <div class="button">
-                                <a href="service-single.html" class="bizwheel-btn"><i class="fa fa-arrow-circle-o-right"></i>Learn More</a>
+                                <a href="#" class="bizwheel-btn"><i class="fa fa-arrow-circle-o-right"></i>Learn More</a>
                             </div>
                         </div>
                         <!--/ End Single Feature -->
@@ -319,12 +308,12 @@
                         <!-- Single Feature -->
                         <div class="single-feature">
                             <div class="icon-head"><i class="fa fa-podcast"></i></div>
-                            <h4><a href="service-single.html">Give them Wings!</a></h4>
+                            <h4><a href="#">Give them Wings!</a></h4>
                             <p>Our vision is to be the source
                                 for student's learning on the internet
                             available from anywhere and without charge.</p>
                             <div class="button">
-                                <a href="service-single.html" class="bizwheel-btn"><i class="fa fa-arrow-circle-o-right"></i>Learn More</a>
+                                <a href="#" class="bizwheel-btn"><i class="fa fa-arrow-circle-o-right"></i>Learn More</a>
                             </div>
                         </div>
                         <!--/ End Single Feature -->
@@ -381,9 +370,10 @@
                                 <div class="icon-bg"><i class="fa fa-handshake-o"></i></div>
                             </div>
                             <div class="service-content">
-                                <h4><a href="#">{{$level->name}}</a></h4>
+                                @php $url = Str::slug($level->name, '-'); @endphp
+                                <h4><a href="{{route('classes', $url)}}">{{$level->name}}</a></h4>
                                 <p>Cras venenatis, purus sit amet tempus mattis, justo nisi facilisis metus, in tempus ipsum ipsum eu ipsum. Class aptent taciti</p>
-                                <a class="btn" href="service-business.html"><i class="fa fa-arrow-circle-o-right"></i>View Service</a>
+                                <a class="btn" href="#"><i class="fa fa-arrow-circle-o-right"></i>View Service</a>
                             </div>
                         </div>
                         <!--/ End Single Service -->
@@ -418,90 +408,25 @@
                     <div class="col-12">
                         <div class="portfolio-main">
                             <div id="portfolio-item" class="portfolio-item-active">
+                                @forelse($classes as $class)
                                 <div class="cbp-item business animation">
                                     <!-- Single Portfolio -->
                                     <div class="single-portfolio">
+                                            @php $url = Str::slug($class->name, '-'); @endphp
                                         <div class="portfolio-head overlay">
                                             <img src="{{asset('img/graduation.png')}}" alt="#">
-                                            <a class="more" href="portfolio-single.html"><i class="fa fa-long-arrow-right"></i></a>
+                                            <a class="more" href="{{route('resource', $url)}}"><i class="fa fa-long-arrow-right"></i></a>
                                         </div>
                                         <div class="portfolio-content">
-                                            <h4><a href="portfolio-single.html">Creative Marketing</a></h4>
+                                            <h4><a href="{{route('resource', $url)}}">{{$class->name}}</a></h4>
                                             <p>Business, Aniamtion</p>
                                         </div>
                                     </div>
                                     <!--/ End Single Portfolio -->
                                 </div>
-                                <div class="cbp-item business animation">
-                                    <!-- Single Portfolio -->
-                                    <div class="single-portfolio">
-                                        <div class="portfolio-head overlay">
-                                            <img src="{{asset('img/graduation.png')}}" alt="#">
-                                            <a class="more" href="portfolio-single.html"><i class="fa fa-long-arrow-right"></i></a>
-                                        </div>
-                                        <div class="portfolio-content">
-                                            <h4><a href="portfolio-single.html">Creative Marketing</a></h4>
-                                            <p>Business, Aniamtion</p>
-                                        </div>
-                                    </div>
-                                    <!--/ End Single Portfolio -->
-                                </div>
-                                <div class="cbp-item business animation">
-                                    <!-- Single Portfolio -->
-                                    <div class="single-portfolio">
-                                        <div class="portfolio-head overlay">
-                                            <img src="{{asset('img/graduation.png')}}" alt="#">
-                                            <a class="more" href="portfolio-single.html"><i class="fa fa-long-arrow-right"></i></a>
-                                        </div>
-                                        <div class="portfolio-content">
-                                            <h4><a href="portfolio-single.html">Creative Marketing</a></h4>
-                                            <p>Business, Aniamtion</p>
-                                        </div>
-                                    </div>
-                                    <!--/ End Single Portfolio -->
-                                </div>
-                                <div class="cbp-item business animation">
-                                    <!-- Single Portfolio -->
-                                    <div class="single-portfolio">
-                                        <div class="portfolio-head overlay">
-                                            <img src="{{asset('img/graduation.png')}}" alt="#">
-                                            <a class="more" href="portfolio-single.html"><i class="fa fa-long-arrow-right"></i></a>
-                                        </div>
-                                        <div class="portfolio-content">
-                                            <h4><a href="portfolio-single.html">Creative Marketing</a></h4>
-                                            <p>Business, Aniamtion</p>
-                                        </div>
-                                    </div>
-                                    <!--/ End Single Portfolio -->
-                                </div>
-                                <div class="cbp-item business animation">
-                                    <!-- Single Portfolio -->
-                                    <div class="single-portfolio">
-                                        <div class="portfolio-head overlay">
-                                            <img src="{{asset('img/graduation.png')}}" alt="#">
-                                            <a class="more" href="portfolio-single.html"><i class="fa fa-long-arrow-right"></i></a>
-                                        </div>
-                                        <div class="portfolio-content">
-                                            <h4><a href="portfolio-single.html">Creative Marketing</a></h4>
-                                            <p>Business, Aniamtion</p>
-                                        </div>
-                                    </div>
-                                    <!--/ End Single Portfolio -->
-                                </div>
-                                <div class="cbp-item business animation">
-                                    <!-- Single Portfolio -->
-                                    <div class="single-portfolio">
-                                        <div class="portfolio-head overlay">
-                                            <img src="{{asset('img/graduation.png')}}" alt="#">
-                                            <a class="more" href="portfolio-single.html"><i class="fa fa-long-arrow-right"></i></a>
-                                        </div>
-                                        <div class="portfolio-content">
-                                            <h4><a href="portfolio-single.html">Creative Marketing</a></h4>
-                                            <p>Business, Aniamtion</p>
-                                        </div>
-                                    </div>
-                                    <!--/ End Single Portfolio -->
-                                </div>
+                                @empty
+                                <p>Nothing yet!</p>
+                                @endforelse
                             </div>
                         </div>
                     </div>
@@ -628,7 +553,7 @@
                                     </div>
                                     <div class="news-body">
                                         <div class="news-content">
-                                            <h3 class="news-title"><a href="blog-single.html">We Provide you Best &amp; Creative Consulting Service</a></h3>
+                                            <h3 class="news-title"><a href="#">We Provide you Best &amp; Creative Consulting Service</a></h3>
                                             <div class="news-text"><p>Sed tempus pulvinar augue ut euismod. Donec a nisi volutpat, dignissim mauris eget. Quisque vitae nunc sit amet eros pellentesque tempus at sit amet sem. Maecenas feugiat mauris</p></div>
                                             <ul class="news-meta">
                                                 <li class="date"><i class="fa fa-calendar"></i>April 2020</li>
@@ -648,7 +573,7 @@
                                     </div>
                                     <div class="news-body">
                                         <div class="news-content">
-                                            <h3 class="news-title"><a href="blog-single.html">We Provide you Best &amp; Creative Consulting Service</a></h3>
+                                            <h3 class="news-title"><a href="#">We Provide you Best &amp; Creative Consulting Service</a></h3>
                                             <div class="news-text"><p>Sed tempus pulvinar augue ut euismod. Donec a nisi volutpat, dignissim mauris eget. Quisque vitae nunc sit amet eros pellentesque tempus at sit amet sem. Maecenas feugiat mauris</p></div>
                                             <ul class="news-meta">
                                                 <li class="date"><i class="fa fa-calendar"></i>April 2020</li>
@@ -668,7 +593,7 @@
                                     </div>
                                     <div class="news-body">
                                         <div class="news-content">
-                                            <h3 class="news-title"><a href="blog-single.html">We Provide you Best &amp; Creative Consulting Service</a></h3>
+                                            <h3 class="news-title"><a href="#">We Provide you Best &amp; Creative Consulting Service</a></h3>
                                             <div class="news-text"><p>Sed tempus pulvinar augue ut euismod. Donec a nisi volutpat, dignissim mauris eget. Quisque vitae nunc sit amet eros pellentesque tempus at sit amet sem. Maecenas feugiat mauris</p></div>
                                             <ul class="news-meta">
                                                 <li class="date"><i class="fa fa-calendar"></i>April 2020</li>
@@ -688,7 +613,7 @@
                                     </div>
                                     <div class="news-body">
                                         <div class="news-content">
-                                            <h3 class="news-title"><a href="blog-single.html">We Provide you Best &amp; Creative Consulting Service</a></h3>
+                                            <h3 class="news-title"><a href="#">We Provide you Best &amp; Creative Consulting Service</a></h3>
                                             <div class="news-text"><p>Sed tempus pulvinar augue ut euismod. Donec a nisi volutpat, dignissim mauris eget. Quisque vitae nunc sit amet eros pellentesque tempus at sit amet sem. Maecenas feugiat mauris</p></div>
                                             <ul class="news-meta">
                                                 <li class="date"><i class="fa fa-calendar"></i>April 2020</li>
@@ -772,7 +697,7 @@
                             <div class="single-widget footer-about widget"> 
                                 <div class="logo">
                                     <div class="img-logo">
-                                        <a class="logo" href="index.html">
+                                        <a class="logo" href="/">
                                             <img class="img-responsive" src="img/logo2.png" alt="logo">
                                         </a>
                                     </div>
@@ -790,7 +715,7 @@
                                         <li><a class="instagram" href="#" target="_blank"><i class="fa fa-instagram"></i></a></li>
                                     </ul>
                                 </div>
-                                <div class="button"><a href="#" class="bizwheel-btn">About Us</a></div>
+                                <div class="button"><a href="{{route('about')}}" class="bizwheel-btn">About Us</a></div>
                             </div>      
                             <!--/ End Footer About -->      
                         </div>
@@ -799,7 +724,7 @@
                             <div class="single-widget f-link widget">
                                 <h3 class="widget-title">Company</h3>
                                 <ul>
-                                    <li><a href="#">About Us</a></li>
+                                    <li><a href="{{route('about')}}">About Us</a></li>
                                     <li><a href="#">Our Services</a></li>
                                     <li><a href="#">Portfolio</a></li>
                                     <li><a href="#">Pricing Plan</a></li>
@@ -817,7 +742,7 @@
                                     <div class="post-thumb"><a href="#"><img src="https://via.placeholder.com/70x70" alt="#"></a></div>
                                     <div class="content">
                                         <p class="post-meta"><time class="post-date"><i class="fa fa-clock-o"></i>April 15, 2020</time></p>
-                                        <h4 class="title"><a href="blog-sngle.html">We Provide you Best &amp; Creative Consulting Service</a></h4>
+                                        <h4 class="title"><a href="#">We Provide you Best &amp; Creative Consulting Service</a></h4>
                                     </div>
                                 </div>
                                 <!--/ End Single News -->
@@ -826,7 +751,7 @@
                                     <div class="post-thumb"><a href="#"><img src="https://via.placeholder.com/70x70" alt="#"></a></div>
                                     <div class="content">
                                         <p class="post-meta"><time class="post-date"><i class="fa fa-clock-o"></i>April 10, 2020</time></p>
-                                        <h4 class="title"><a href="blog-sngle.html">We Provide you Best &amp; Creative Consulting Service</a></h4>
+                                        <h4 class="title"><a href="#">We Provide you Best &amp; Creative Consulting Service</a></h4>
                                     </div>
                                 </div>
                                 <!--/ End Single News -->

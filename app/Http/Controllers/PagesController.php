@@ -18,9 +18,10 @@ class PagesController extends Controller
     //Return the home page
 	public function home()
 	{
-		$levels =  EducationLevel::all(); 
+		$levels =  EducationLevel::all()->random(3); 
+		$classes = EducationClass::all()->random(6);
 
-		return view('welcome', compact('levels'));
+		return view('welcome', compact('levels', 'classes'));
 	}
 
 	// Return the classes
@@ -45,5 +46,37 @@ class PagesController extends Controller
 		$levels =  EducationLevel::all(); 
 
 		return view('resources', compact('education_class', 'resources', 'levels'));
+	}
+
+	// retutn the about page
+	public function about()
+	{
+		$levels =  EducationLevel::all(); 
+
+		return view('about-us', compact('levels'));
+	}
+
+	//return the contact page
+	public function contact()
+	{
+		$levels =  EducationLevel::all();
+
+		return view('contact-us', compact('levels'));
+	}
+
+	//return the blogs page
+	public function blog()
+	{
+		$levels =  EducationLevel::all();
+
+		return view('blog-articles', compact('levels'));
+	}
+
+	//return the single blog page
+	public function singleblog()
+	{
+		$levels =  EducationLevel::all();
+
+		return view('blog-article', compact('levels'));
 	}
 }

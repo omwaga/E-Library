@@ -1,77 +1,97 @@
-@extends('layouts.app')
-
+@extends('layouts.master')
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+<!-- Contact Us -->
+<section class="contact-us section-space">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 col-md-7 col-12">
+                <!-- Contact Form -->
+                <div class="contact-form-area m-top-30">
+                    <h4>Register</h4>
+                    <form  method="POST" action="{{ route('register') }}">
                         @csrf
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <div class="form-group">
+                                    <div class="icon"><i class="fa fa-user"></i></div>
+                                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Full Name">
 
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-
-                                @error('name')
+                                    @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                @enderror
+                                    @enderror
+                                </div>
                             </div>
-                        </div>
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <div class="form-group">
+                                    <div class="icon"><i class="fa fa-envelope"></i></div>
+                                    <input  type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email Address">
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                                @error('email')
+                                    @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                @enderror
+                                    @enderror
+                                </div>
                             </div>
-                        </div>
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <div class="form-group">
+                                    <div class="icon"><i class="fa fa-user"></i></div>
+                                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Password">
 
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
+                                    @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                @enderror
+                                    @enderror
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <div class="form-group">
+                                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="Confirm Password">
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
+                            <div class="col-12">
+                                <div class="form-group button">
+                                    <button type="submit" class="bizwheel-btn theme-2">Register</button>
+                                </div>
                             </div>
                         </div>
                     </form>
                 </div>
+                <!--/ End contact Form -->
+            </div>
+            <div class="col-lg-5 col-md-5 col-12">
+                <div class="contact-box-main m-top-30">
+                    <div class="contact-title">
+                        <h2>Contact with us</h2>
+                        <p>euismod eu augue. Etiam vel dui arcu. Cras varius mieros pharetra, id aliquam metus venenatis. Donec sollicit</p>
+                    </div>
+                    <!-- Single Contact -->
+                    <div class="single-contact-box">
+                        <div class="c-icon"><i class="fa fa-phone"></i></div>
+                        <div class="c-text">
+                            <h4>Call Us Now</h4>
+                            <p>Tel.: 888 765 4321<br> Mob.: 765 654 3451</p>
+                        </div>
+                    </div>
+                    <!--/ End Single Contact -->
+                    <!-- Single Contact -->
+                    <div class="single-contact-box">
+                        <div class="c-icon"><i class="fa fa-envelope-o"></i></div>
+                        <div class="c-text">
+                            <h4>Email Us</h4>
+                            <p>contact@bizwheel.com<br>info@bizwheel.com</p>
+                        </div>
+                    </div>
+                    <!--/ End Single Contact -->
+                    <div class="button">
+                        <a href="#" class="bizwheel-btn theme-1">Our Works<i class="fa fa-angle-right"></i></a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</section> 
 @endsection
