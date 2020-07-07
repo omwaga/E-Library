@@ -43,6 +43,7 @@ class EducationClassController extends Controller
         $attributes = $request->validate([
             'education_level_id' => 'required',
             'name' => 'required|min:3',
+            'description' => 'required|min:3',
         ]);
 
         EducationClass::create($attributes);

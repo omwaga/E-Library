@@ -43,7 +43,8 @@ class SubjectsController extends Controller
     {
         $attributes = request()->validate([
             'education_class_id' => 'required',
-            'name' => 'required|min:3'
+            'name' => 'required|min:3',
+            'description' => 'required|min:3',
         ]);
 
         Subject::create($attributes);

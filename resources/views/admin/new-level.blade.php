@@ -37,8 +37,12 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-group">
-                                        <label>What do you need to get done?</label>
+                                        <label>Name:</label>
                                         <input type="text" name="name" class="form-control" placeholder="Level Name" required="" value="{{old('name')}}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Description:</label>
+                                        <textarea class="form-control" name="description">{{old('description')}}</textarea>
                                     </div>
                                 </div>  
                                 <div class="col-lg-12">

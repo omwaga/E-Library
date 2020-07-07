@@ -37,7 +37,7 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-group">
-                                        <label>What is the subject name?</label>
+                                        <label>Name:</label>
                                         <input type="text" name="name" class="form-control" placeholder="Subject Name" required="" value="{{old('name')}}">
                                     </div>
                                 </div>
@@ -50,6 +50,12 @@
                                             <option value="{{$class->id}}">{{$class->name}}</option>
                                             @endforeach
                                         </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">                                    
+                                    <div class="form-group">
+                                        <label>Description:</label>
+                                        <textarea class="form-control" name="description">{{old('description')}}</textarea>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">

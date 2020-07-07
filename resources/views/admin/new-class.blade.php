@@ -37,19 +37,25 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-group">
-                                        <label>What is the class name?</label>
+                                        <label>Name:</label>
                                         <input type="text" name="name" class="form-control" placeholder="Class Name" required="" value="{{old('name')}}">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        <label>Education Level</label>                                        
+                                        <label>Education Level:</label>                                        
                                         <select name="education_level_id" class="form-control">
                                             <option value="">Select Education Level</option>
                                             @foreach($levels as $level)
                                             <option value="{{$level->id}}">{{$level->name}}</option>
                                             @endforeach
                                         </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">                                    
+                                    <div class="form-group">
+                                        <label>Description:</label>
+                                        <textarea class="form-control" name="description">{{old('description')}}</textarea>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
