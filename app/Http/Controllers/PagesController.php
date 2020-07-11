@@ -12,7 +12,9 @@ class PagesController extends Controller
     //admin login
 	public function login()
 	{
-		return view('auth.admin-login');
+		$levels =  EducationLevel::all();
+
+		return view('auth.admin-login', compact('levels'));
 	}
 
     //Return the home page

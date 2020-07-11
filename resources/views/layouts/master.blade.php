@@ -246,11 +246,11 @@
                 <div class="col-lg-2 col-md-6 col-12">
                     <!-- Footer Links -->       
                     <div class="single-widget f-link widget">
-                        <h3 class="widget-title">Company</h3>
+                        <h3 class="widget-title">Quick links</h3>
                         <ul>
                             <li><a href="#">About Us</a></li>
-                            <li><a href="#">Our Services</a></li>
-                            <li><a href="#">Portfolio</a></li>
+                            <li><a href="#">Our Resources</a></li>
+                            <li><a href="#">Learning Model</a></li>
                             <li><a href="#">Pricing Plan</a></li>
                             <li><a href="#">Contact us</a></li>
                         </ul>
