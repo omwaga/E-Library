@@ -372,8 +372,8 @@
                             <div class="service-content">
                                 @php $url = Str::slug($level->name, '-'); @endphp
                                 <h4><a href="{{route('classes', $url)}}">{{$level->name}}</a></h4>
-                                <p>Cras venenatis, purus sit amet tempus mattis, justo nisi facilisis metus, in tempus ipsum ipsum eu ipsum. Class aptent taciti</p>
-                                <a class="btn" href="#"><i class="fa fa-arrow-circle-o-right"></i>View Service</a>
+                                <p>{!!$level->description!!}</p>
+                                <a class="btn" href="#"><i class="fa fa-arrow-circle-o-right"></i>Browse Available Resources</a>
                             </div>
                         </div>
                         <!--/ End Single Service -->

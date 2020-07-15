@@ -34,7 +34,7 @@
 							</div>
 							<div class="section-bottom">
 								<div class="text-style-two">
-									<p>Aliquam Sodales Justo Sit Amet Urna Auctor Scelerisquinterdum Leo Anet Tempus Enim Esent Egetis Hendrerit Vel Nibh Vitae Ornar Sem Velit Aliquam</p>
+									<p>{!!$education_class->description!!}</p>
 								</div>
 							</div>
 						</div>
