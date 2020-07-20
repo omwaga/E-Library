@@ -419,7 +419,7 @@
                                         </div>
                                         <div class="portfolio-content">
                                             <h4><a href="{{route('resource', $url)}}">{{$class->name}}</a></h4>
-                                            <p>Business, Aniamtion</p>
+                                            <p>{!!$class->description!!}</p>
                                         </div>
                                     </div>
                                     <!--/ End Single Portfolio -->

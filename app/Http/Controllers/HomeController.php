@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\EducationLevel;
+use App\EducationalResource;
 
 class HomeController extends Controller
 {
@@ -25,7 +26,8 @@ class HomeController extends Controller
     public function index()
     {
         $levels =  EducationLevel::all(); 
+        $resources = EducationalResource::all();
 
-        return view('home', compact('levels'));
+        return view('home', compact('levels', 'resources'));
     }
 }
