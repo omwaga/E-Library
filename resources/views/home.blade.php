@@ -7,7 +7,7 @@
             <div class="col-md-4">
                 <div class="about-content section-title default text-left">
                     <div class="section-top">
-                        <h4><b>Browse Resources By Classess</b></h4>
+                        <h4><b>Resources By Classess</b></h4>
                     </div>
                     <div class="section-bottom">
                         <div class="button">
@@ -19,7 +19,7 @@
             <div class="col-md-4">
                 <div class="about-content section-title default text-left">
                     <div class="section-top">
-                        <h4><b>Browse Resource by Education Levels</b></h4>
+                        <h4><b>Resources by Education Levels</b></h4>
                     </div>
                     <div class="section-bottom">
                         <div class="button">
@@ -31,7 +31,7 @@
             <div class="col-md-4">
                 <div class="about-content section-title default text-left">
                     <div class="section-top">
-                        <h4><b>Browse Resource by Education Levels</b></h4>
+                        <h4><b>Resources by Education Levels</b></h4>
                     </div>
                     <div class="section-bottom">
                         <div class="button">
@@ -46,13 +46,9 @@
                     <div class="col-lg-4 col-md-6 col-12">
                         <!-- Single Service -->
                         <div class="single-service">
-                            <div class="service-head">
-                                <img src="{{asset('img/slider/slider6.jpg')}}" alt="#">
-                                <div class="icon-bg"><i class="fa fa-handshake-o"></i></div>
-                            </div>
                             <div class="service-content">
                                 @php $url = Str::slug($resource->name, '-'); @endphp
-                                <h4><a href="#">{{$resource->name}}</a></h4>
+                                <h5><a href="#">{{$resource->name}}</a></h5>
                                 <p>{{$resource->description}}</p>
                                 @auth()
                                 <a class="btn" href="{{ route('resource.download', $resource->uuid) }}"><i class="fa fa-arrow-circle-o-right"></i>Download</a>
@@ -70,29 +66,34 @@
             <div class="col-md-4">
                 <h4 class="left-title mb20">Search Filter</h4>
                 <div class="contact-form-area">
-                    <form>
+                    <form method="GET" action="{{route('filter')}}">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Keywords...">
+                            <input type="text" class="form-control" name="keywords" placeholder="Keywords...">
                         </div>
                         <div class="form-group mb15">
-                            <select class="form-control" title="Location">                                       
-                                <option>Paris</option>
-                                <option>London</option>
-                                <option>New York</option>
-                                <option>Tokyo</option>
+                            <select class="form-control" name="level">                
+                                <option value="">Education Level</option>
+                                @foreach($levels as $level)
+                                <option value="{{$level->id}}">{{$level->name}}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="form-group">
-                            <select class="form-control" title="Category">                                       
-                                <option>Restaurants</option>
-                                <option>Jobs</option>
-                                <option>Property</option>
-                                <option>Automotive</option>
+                            <select class="form-control" name="class">              
+                                <option value="">Class</option>
+                                @foreach($classes as $class)
+                                <option value="{{$class->id}}">{{$class->name}}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="form-group">
-                            <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Full Name">
-                        </div>
+                            <select class="form-control" name="subject">                              
+                                <option value="">Subject</option>
+                                @foreach($subjects as $subject)
+                                <option value="{{$subject->id}}">{{$subject->name}}</option>
+                                @endforeach
+                            </select>
+                        </div><br>
                         <input type="submit" class="bizwheel-btn theme-2 btn-block" value="Search">
                     </form>
                 </div>

@@ -42,16 +42,6 @@ Route::prefix('admin')->group(function()
     Route::get('learners', 'AdminController@learners')->name('learners');
 });
 
-
-//Authennticated users routes
-Route::resource('user-informations', 'UserInformationsController', [
-        'names' => [
-            'index' => 'informations',
-            'create' => 'informations.create',
-            'store' => 'informations.store',
-        // etc...
-        ]]);
-
 // Public routes
 Route::get('/', 'PagesController@home')->name('homepage');
 Route::get('/classes/{level}', 'PagesController@classes')->name('classes');
@@ -60,6 +50,20 @@ Route::get('/about-us', 'PagesController@about')->name('about');
 Route::get('/contact-us', 'PagesController@contact')->name('contact');
 Route::get('/blog-articles', 'PagesController@blog')->name('blog');
 Route::get('/blog-article', 'PagesController@singleblog')->name('singleblog');
+
+
+//Authenticated users routes
+Route::resource('user-informations', 'UserInformationsController', [
+        'names' => [
+            'index' => 'informations',
+            'create' => 'informations.create',
+            'store' => 'informations.store',
+        // etc...
+        ]]);
+Route::prefix('user')->group(function()
+{
+    Route::get('/filter', 'PagesController@filter')->name('filter');
+});
 
 Auth::routes();
 

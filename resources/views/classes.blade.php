@@ -33,7 +33,14 @@
 					</div>
 					<div class="section-bottom">
 						<div class="text-style-two">
-							<p>{{$education_level->description}}</p>
+							<div class="contact-form-area">
+								<form method="GET" action="{{route('filter')}}">
+									<div class="form-group">
+										<input type="text" class="form-control" name="keywords" placeholder="Keywords...">
+									</div>
+									<input type="submit" class="bizwheel-btn theme-2 btn-block" value="Search">
+								</form>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -41,7 +48,7 @@
 		</div>
 		<div class="row">
 			@forelse($classes as $class)
-			<div class="col-lg-4 col-md-6 col-12">
+			<div class="col-lg-3 col-md-6 col-12">
 				<!-- Single Service -->
 				<div class="single-service">
 					<div class="service-head">

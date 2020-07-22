@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\EducationLevel;
 use App\EducationClass;
 use App\EducationalResource;
+use App\Subject;
 
 class PagesController extends Controller
 {
@@ -44,10 +45,12 @@ class PagesController extends Controller
 		$class_name = ucwords(str_replace('-', ' ', $class));
 		$education_class = EducationClass::where('name', $class_name)->first();
 		$resources = EducationalResource::where('education_class_id', $education_class->id)->get();
+        $classes = EducationClass::all()->all();
+        $subjects = Subject::all();
 
 		$levels =  EducationLevel::all(); 
 
-		return view('resources', compact('education_class', 'resources', 'levels'));
+		return view('resources', compact('education_class', 'resources', 'levels', 'subjects', 'classes'));
 	}
 
 	// retutn the about page
@@ -81,4 +84,67 @@ class PagesController extends Controller
 
 		return view('blog-article', compact('levels'));
 	}
+
+    //search filter results
+    public function filter(Request $request)
+    {
+    	if($request->keywords !== null && $request->level === null && $request->class === null && $request->subject === null)//only keywords provided
+    	{
+    		return 'keywords not null';
+    	}
+    	else
+    	if($request->keywords === null && $request->level !== null && $request->class === null && $request->subject === null)//only level provided
+    	{
+    		return 'level not null';
+    	}
+    	else
+    	if($request->keywords === null && $request->level === null && $request->class !== null && $request->subject === null)//only class provided
+    	{
+    		return 'class not null';
+    	}
+    	else
+    	if($request->keywords === null && $request->level === null && $request->class === null && $request->subject !== null)//only subject provided
+    	{
+    		return 'subject not null';
+    	}
+    	else
+    	if($request->keywords !== null && $request->level !== null && $request->class === null && $request->subject === null)//only keywords and level provided
+    	{
+    		return 'only keywords and level provided';
+    	}
+    	else
+    	if($request->keywords !== null && $request->level === null && $request->class !== null && $request->subject === null)//only keywords and class provided
+    	{
+    		return 'only keywords and class provided';
+    	}
+    	else
+    	if($request->keywords !== null && $request->level === null && $request->class === null && $request->subject !== null)//only keyword and subject provided
+    	{
+    		return 'only keyword and subject provided';
+    	}
+    	else
+    	if($request->keywords !== null && $request->level !== null && $request->class === null && $request->subject === null)//only level and keyword provided
+    	{
+    		return 'only level and keyword providedsubject not null';
+    	}
+    	else
+    	if($request->keywords === null && $request->level !== null && $request->class === null && $request->subject !== null)//only level and subject provided
+    	{
+    		return 'only level and subject provided';
+    	}
+    	else
+    	if($request->keywords === null && $request->level !== null && $request->class !== null && $request->subject === null)//only level and class provided
+    	{
+    		return 'only level and class provided';
+    	}
+    	else
+    	if($request->keywords === null && $request->level === null && $request->class !== null && $request->subject !== null)//only class and subject provided
+    	{
+    		return 'only class and subject provided';
+    	}
+    	else
+    	{
+    		return 'all fields provided';
+    	}
+    }
 }
